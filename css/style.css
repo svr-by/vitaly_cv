@@ -17,11 +17,16 @@ src: local(''),
 }
 
 :root {
+    --color-black: rgba(14, 14, 14);
     --color-white: rgb(255, 255, 255);
     --color-lightgray: rgb(230, 230, 230);
     --color-gray: rgb(110, 110, 110);
     --color-darkgray: rgb(70, 70, 70);
     --color-orange: rgb(236, 184, 48);
+    --color-violet: rgb(109 40 217);
+    --color-purple: rgb(126 34 206);
+    --color-blue: #1a94da;
+    --color-text: var(--color-white);
 }
 
 * {
@@ -44,6 +49,12 @@ body {
     font-weight: 400;
     line-height: 1.5;
     min-height: 100vh;
+    background-image: url(../assets/img/gradient-1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    color:  var(--color-text);
 }
 
 @media (max-width: 1025px) {
@@ -65,7 +76,7 @@ ul, li, h1, h2 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    box-shadow:  5px 0px 10px 0px rgb(0 0 0 / 23%);
+    /* box-shadow:  5px 0px 10px 0px rgb(0 0 0 / 23%); */
     border-radius: 0 0.5rem 0 0;
 }
 
@@ -109,7 +120,7 @@ ul, li, h1, h2 {
     display: block;
     margin: 0 10px;
     line-height: 25px;
-    color: var(--color-darkgray);
+    color: var(--color-gray);
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
@@ -123,12 +134,12 @@ ul, li, h1, h2 {
     margin-top: 3px;
     height: 3px;
     width: 0px;
-    background-color: var(--color-orange);
+    background-color: var(--color-blue);
     transition: 0.3s;
 }
 
 .nav__link:hover {
-    color: var(--color-orange);
+    color: var(--color-blue);
 }
 
 .nav__link:hover::after {
@@ -185,7 +196,6 @@ ul, li, h1, h2 {
 .left-col {
     width: 35%;
     padding: 10px 30px;
-    background-color: var(--color-lightgray);
     border-radius: 0.5rem 0 0 0;
 }
 
@@ -206,17 +216,12 @@ ul, li, h1, h2 {
     position: relative;
     padding: 1rem 2rem;
     width: 65%;
-    background-color: var(--color-white);
     border-radius: 0 0.5rem 0 0;
 }
 
 @media (max-width: 768px) {
     .right-col {
         width: 100%;
-    }
-
-    .left-col {
-        background-color: var(--color-white);
     }
 
     .hamburger {
@@ -304,13 +309,37 @@ ul, li, h1, h2 {
 
 .title {
     font-size: 30px;
-    color: var(--color-darkgray);
+    color: var(--color-text);
     margin-bottom: 10px;
-    border-bottom: 2px solid var(--color-orange);
+    border-bottom: 2px solid var(--color-gray);
+}
+
+.title--no-border {
+    border-bottom: none;
+}
+
+.title--hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .title--hidden {
+        display: block;
+    }
 }
 
 .about-text {
     line-height: 2rem;
+    text-align: justify;
+    margin: 0 0 0.5rem 0;
+}
+
+.about-text__link {
+    color: var(--color-text);
+}
+
+.about-text__link:hover {
+    color: var(--color-blue);
 }
 
 .list {
@@ -341,15 +370,20 @@ ul, li, h1, h2 {
     margin: 0 0 0 0.5rem;
 }
 
-.list__text {
+.list__text,
+.list__link {
     display: inline-block;
     vertical-align: middle;
     margin: 0;
 }
 
+.list__link {
+    color: inherit;
+    text-decoration: none;
+}
+
 .section--name {
-    margin-top: 2rem;
-    color: var(--color-darkgray);
+    margin: 2rem 0 4rem;
     letter-spacing: 0.2rem;
 }
 
@@ -360,7 +394,7 @@ ul, li, h1, h2 {
 }
 
 .position {
-    color: var(--color-orange);
+    color: #BEBEBE;
     width: 80%;
 }
 
@@ -400,18 +434,15 @@ ul, li, h1, h2 {
 }
 
 .project-list {
+    margin: 2rem 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 .project {
-    position: relative;
-    width: calc(100%/2 - 0.5rem);
-    height: 250px;
-    padding: 1rem 2rem;
-    border: 1px solid var(--color-lightgray);
-    border-radius: 0.5rem;
+    width: calc(100%/3 - 0.8rem);
+    height: 200px;
 }
 
 
@@ -421,53 +452,76 @@ ul, li, h1, h2 {
     }
 }
 
-.project__img {
+.project__inner {
+    position: relative;
     width: 100%;
     height: 100%;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.project:hover .project__inner {
+    transform: rotateY(180deg);
+}
+
+.project__front, 
+.project__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    -webkit-backface-visibility: hidden; /* Safari */
+    background-color: var(--color-black);
+    backface-visibility: hidden;
+  }
+
+.project__back {
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    transform: rotateY(180deg);
+}
+
+.project__img {
+    width: 70%;
+    height: 70%;
     object-fit: contain;
+}
+
+.project__title {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 .project__info {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
-    opacity: 0;
+    right: 0.5rem;
+    top: 0;
+    opacity: 0.4;
     padding: 0.5rem;
-    background-color: var(--color-lightgray);
-    color: var(--color-gray);
-    font-size: 0.8rem;
-}
-
-.project__links {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 1rem;
-    opacity: 0;
-    display: flex;
-    justify-content: space-around;
-    transition: all 0.3s ease-out;
-}
-
-.project:hover .project__info,
-.project:focus .project__info,
-.project:hover .project__links,
-.project:focus .project__links{
-    opacity: 1;
+    color: var(--color-blue);
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.7s ease-out;
 }
 
 .project__link {
     padding: 0 1rem;
-    color: var(--color-gray);
+    color: var(--color-blue);
     text-decoration: none;
-    border: 1px solid var(--color-gray);
-    /* border-radius: 0.5rem; */
+    border: 1px solid var(--color-blue);
     transition: all 0.3s;
 }
 
 .project__link:hover {
-    color: var(--color-orange);
-    border: 1px solid var(--color-orange);
+    color: var(--color-white);
+    background-color: var(--color-blue);
+    border: 1px solid var(--color-blue);
 }
 
 .footer__wrapper{
@@ -476,7 +530,6 @@ ul, li, h1, h2 {
     align-items: center;
     padding: 10px 20px;
     color: var(--color-white);
-    background-color: var(--color-gray);
     border-radius: 0 0 0.5rem 0.5rem;
 }
 
@@ -496,7 +549,7 @@ ul, li, h1, h2 {
 }
 
 .footer__link:hover{
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(90deg) brightness(101%) contrast(102%);
+    filter: invert(49%) sepia(71%) saturate(1852%) hue-rotate(174deg) brightness(90%) contrast(90%);;
 }
 
 .footer__link--github {
