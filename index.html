@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-    <title>Vitalik Pestov CV</title>
+    <title>Vitaly Pestov CV</title>
 </head>
 <body>   
     <main class="main">
@@ -17,11 +17,11 @@
                     <div class="line line2"></div>
                     <div class="line line3"></div>
                 </div>
-                <section class="section section_avatar">
+                <section class="section section--avatar">
                     <img class="avatar__img" src="assets/img/Vitalik_avatar.jpg" alt="photo of Siarhei">
                 </section>
                 <section class="section section--name">
-                    <h1 class="name">Vitalik Pestov</h1>
+                    <h1 class="name">Vitaly Pestov</h1>
                     <h2 class="position">Business Development Manager <br>at Listing.Help</h2>
                 </section>
                 <section id="contacts" class="section">
@@ -29,19 +29,15 @@
                     <ul class="list">
                         <li class="list__item">
                             <img src="./assets/svg/icon-telegram.svg" class="list__icon" alt="Icon">
-                            <a href="https://t.me/VitaliyListingHelp" class="list__link">Telegram: @VitaliyListingHelp</a>
+                            <a href="https://t.me/VitaliyListingHelp" class="list__link">@VitaliyListingHelp</a>
                         </li>
                         <li class="list__item">
                             <img src="./assets/svg/icon-email.svg" class="list__icon" alt="Icon">
-                            <a href="mailto:vu@listing.help" class="list__link">Email: vu@listing.help</a>
+                            <a href="mailto:vu@listing.help" class="list__link">vu@listing.help</a>
                         </li>
-                        <!-- <li class="list__item">
-                            <img src="./assets/svg/icon-whatsapp.svg" class="list__icon" alt="Icon">
-                            <a href="https://wa.me/79006457330" class="list__link">What’sApp: +79006457330</a>
-                        </li> -->
                         <li class="list__item">
                             <img src="./assets/svg/icon-linkedin.svg" class="list__icon" alt="Icon">
-                            <a href="https://www.linkedin.com/in/vitalipestov/" class="list__link">LinkedIn: vitalipestov</a>
+                            <a href="https://www.linkedin.com/in/vitalipestov/" class="list__link">vitalipestov</a>
                         </li>
                         <li class="list__item">
                             <img src="./assets/svg/icon-location.svg" class="list__icon" alt="Icon">
@@ -50,9 +46,17 @@
                         </li>
                     </ul>
                 </section>
+                <section id="listings" class="section">
+                    <h2 class="title">Listings</h2>
+                    <p>We will select the best exchange based on our experience and deep understanding of your goal</p>
+                    <a href="https://docs.google.com/spreadsheets/d/1S67k7brNzuxgXwXUFvLtcpuLc-eimYIQJTziTZP4Log/edit#gid=1007133435" class="button" target="_blank">
+                        Get the price list
+                    </a>
+                </section>
                 <section id="skills" class="section">
-                    <h2 class="title">Competencies</h2>
-                    <ul class="list">
+                    <h2 class="title">Additional options</h2>
+                    <p>In addition to listing on CEX, we are happy to connect with our partners.They can be useful with:</p>
+                    <ul class="list list--marked">
                         <li class="list__item">
                             <p class="list__text">Marketing</p>
                         </li>
@@ -113,7 +117,10 @@
                             <a href="#about" class="nav__link">About me</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#skills" class="nav__link">Skills</a>
+                            <a href="#listings" class="nav__link">Listings</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#skills" class="nav__link">Options</a>
                         </li>
                         <li class="nav__item">
                             <a href="#projects" class="nav__link">Projects</a>
@@ -125,7 +132,7 @@
                 </nav>
                 <div class="background"></div>
                 <section class="section section--name">
-                    <h1 class="name">Vitalik Pestov</h1>
+                    <h1 class="name">Vitaly Pestov</h1>
                     <h2 class="position">Business Development Manager <br>at Listing.Help</h2>
                 </section>
                 <section id="about" class="section">
@@ -135,6 +142,26 @@
                     <p class="about-text">We work directly through exchange owners and top management, so we provide our clients with prices below the official ones and organize listing in short time.</p>
                     <p class="about-text">Directors of many top exchanges, including Binance, Huobi, Okex, Kucoin, and many others were speakers at the forum that we organize twice every year since 2017 - blockchain-life.com. This is one more reason why the prices for our customers are 15-35% lower than the direct prices.</p>
                 </section>
+                <section id="forum" class="section forum">
+                    <h3 class="forum__title">
+                        <span>Listing.Help is the organizer of</span>
+                        <a href="https://blockchain-life.com/asia/en/" target="_blank">
+                            <img src="assets/img/bl-life.png" class="forum__logo" alt="Forum">
+                        </a> 
+                    </h3>
+                    <div class="forum__photos">
+                        <div class="forum__photo-wrap">
+                            <img src="assets/img/forum1.jpg" alt="Forum photo" class="forum__photo">
+                        </div>
+                        <div class="forum__photo-wrap">
+                            <img src="assets/img/forum2.jpg" alt="Forum photo" class="forum__photo">
+                        </div>
+                        <div class="forum__photo-wrap">
+                            <img src="assets/img/forum3.jpg" alt="Forum photo" class="forum__photo">
+                        </div>
+                    </div>
+                </section>
+                <div class="section__line"></div>
                 <section id="projects" class="section">
                     <h2 class="title title--no-border">Projects</h2>
                     <div class="project-list">
@@ -282,6 +309,59 @@
                                 <a href="https://polkabridge.org/" class="project__link" target="_blank">Web</a>
                                 <a href="https://coinmarketcap.com/currencies/polkabridge/" class="project__link" target="_blank">CoinMarketCap</a>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="project__inner">
+                                <div class="project__front">
+                                <div class="project__info" >XDAO</div>
+                                <img src="./assets/img/logo-xDAO.png" alt="Xdao" class="project__img">
+                                </div>
+                                <div class="project__back">
+                                <p class="project__title">Xdao</p>
+                                <a href="https://www.xdao.app/" class="project__link" target="_blank">Web</a>
+                                <a href="https://coinmarketcap.com/ru/currencies/xdao/" class="project__link" target="_blank">CoinMarketCap</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <div class="project__inner">
+                              <div class="project__front">
+                                <div class="project__info" >CRTS</div>
+                                <img src="./assets/img/logo-cratos.png" class="project__img" alt="Cratos">
+                              </div>
+                              <div class="project__back">
+                                <p class="project__title">Cratos</p>
+                                <a href="https://www.cratostoken.com/" class="project__link" target="_blank">Web</a>
+                                <a href="https://coinmarketcap.com/ru/currencies/cratos/" class="project__link" target="_blank">CoinMarketCap</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="project__inner">
+                              <div class="project__front">
+                                <div class="project__info" >FIO</div>
+                                <img src="./assets/img/logo-fio_protocol.png" class="project__img" alt="FIO Protocol">
+                              </div>
+                              <div class="project__back">
+                                <p class="project__title">FIO Protocol</p>
+                                <a href="https://fioprotocol.io/" class="project__link" target="_blank">Web</a>
+                                <a href="https://coinmarketcap.com/currencies/fio-protocol/" class="project__link" target="_blank">CoinMarketCap</a>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="project__inner">
+                              <div class="project__front">
+                                <div class="project__info" >ADP</div>
+                                <img src="./assets/img/logo-adappter.png" class="project__img" alt="Adappter Token">
+                              </div>
+                              <div class="project__back">
+                                <p class="project__title">Adappter</p>
+                                <a href="https://adappter.io/eng.html" class="project__link" target="_blank">Web</a>
+                                <a href="https://coinmarketcap.com/currencies/adappter-token/" class="project__link" target="_blank">CoinMarketCap</a>
+                              </div>
                             </div>
                         </div>
                         <div class="project">
