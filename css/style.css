@@ -611,7 +611,7 @@ ul, li, h1, h2 {
     right: 0.5rem;
     top: 0;
     opacity: 0.4;
-    padding: 0.5rem;
+    padding: 0.3rem;
     color: var(--color-blue);
     font-weight: 700;
     font-size: 1.2rem;
@@ -661,20 +661,8 @@ ul, li, h1, h2 {
     filter: invert(49%) sepia(71%) saturate(1852%) hue-rotate(174deg) brightness(90%) contrast(90%);;
 }
 
-.footer__link--github {
-    background-image: url("../assets/svg/icon-github.svg");
-}
-
 .footer__link--linkedin {
     background-image: url("../assets/svg/icon-linkedin.svg");
-}
-
-.footer__link--youtube {
-    background-image: url("../assets/svg/icon-youtube.svg");
-}
-
-.footer__link--codewars {
-    background-image: url("../assets/svg/icon-codewars.svg");
 }
 
 @media (max-width: 576px) {
