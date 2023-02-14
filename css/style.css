@@ -665,6 +665,14 @@ ul, li, h1, h2 {
     background-image: url("../assets/svg/icon-linkedin.svg");
 }
 
+.footer__link--telegram {
+    background-image: url("../assets/svg/icon-telegram.svg");
+}
+
+.footer__link--email {
+    background-image: url("../assets/svg/icon-email.svg");
+}
+
 @media (max-width: 576px) {
     .footer__wrapper{
         flex-direction: column;
